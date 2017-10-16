@@ -27,3 +27,5 @@ Difficulties:
 
 	1) The most work came in the details. I spent many many ours finding the best aspect ratio for parts and making sure sound and visuals lined up perfectly.
 	2) Starting from scratch with OpenGl meant 
+
+**more information at anandupender.github.i0/Flatland

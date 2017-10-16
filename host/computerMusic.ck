@@ -27,7 +27,7 @@ SinOsc s3 => dac;
 fun void compMusic(int dimension){
 
 	100 => float max;
-	10 => float min;
+	1 => float min;
 	150::ms => dur speed;
 	while(true){
 		Std.rand2f(min, max) => float random;
@@ -41,9 +41,9 @@ fun void compMusic(int dimension){
 
 		}
 		speed => now;
-		max + 10 => max;
-		min + 3 => min;
-		speed - .2::ms => speed;
+		max + 7 => max;
+		min + 2 => min;
+		speed - .05::ms => speed;
 	}
 }
 
@@ -95,3 +95,6 @@ spork ~ compMusic(2) @=> Shred killCube;
 external Event cubeEnd;
 cubeEnd=>now;
 killCube.exit();
+SinOsc final => dac;
+200 => final.freq;
+3::second => now;

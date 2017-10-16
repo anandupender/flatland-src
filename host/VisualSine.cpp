@@ -79,8 +79,6 @@ vector< int > g_all_maxes;
 float g_y_rotation = 0;
 float g_y_rotation_large = 0;
 
-int g_frequency_max = 100;
-
 // global variables
 bool g_draw_dB = false;
 ChucK * the_chuck;
@@ -430,7 +428,10 @@ void gl_final_zoom_out(){
     }
     if(final_trigger){
         zCam -= 1;
-        if(zCam <= -380){
+        if(zCam <= -300){
+            the_chuck->broadcastExternalEvent("cubeEnd");
+        }
+        if(zCam <= -700){
             exit(EXIT_FAILURE); //end whole program
         }
     }
@@ -455,7 +456,6 @@ bool g_x_rotate_flip;
 bool g_y_rotate_flip;
 
 void gl_cube_rotate(){
-    //start rotating screen!
     glLoadIdentity();
     gluLookAt(xCam, yCam, zCam, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
     int trig = 10;
@@ -546,21 +546,21 @@ int glitch_counter = 0;     //show cube 50 times
 bool glitch_started = false;
 
 void gl_glitch(){
-
-    int glitch = rand() % 101;
+    //set randomness!!
+    int glitch = rand() % 501;
     if(glitch == 100){
         glitch_started = true;
     }
 
-    if(glitch_started && glitch_counter <=15){  //show glitch cube
+    if(glitch_started && glitch_counter <=10){  //show glitch cube for certain iteration count
         glitch_counter++;
         glColor3f(rand()%255/255.0, rand()%255/255.0,rand()%255/255.0);
         if(g_square){
             glutWireCube((GLdouble) 5);
         }
         if(g_line){
-            float xLen = .2;
-            float yLen = 7;
+            float xLen = 3;
+            float yLen = 3;
             glBegin(GL_LINE_STRIP);
             glVertex2f(xLen, yLen);
             glVertex2f(xLen, -yLen);
@@ -573,11 +573,6 @@ void gl_glitch(){
         glitch_started = 0;
         glitch_counter = 0;
     }
-    // glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
-    //gluLookAt(2, 0, 7, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-    //glClearColor(rand()%255/255.0,rand()%255/255.0,rand()%255/255.0,1);
-    //usleep(100000);
-    //gluLookAt(0, 0, 10, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 }
 
 void gl_time_domain(float max){
@@ -600,9 +595,7 @@ void gl_time_domain_custom(float xMin, float xMax, float yOffset, bool flip, flo
     GLfloat x = xMin;
     GLfloat xinc = ::fabs(x*2 / g_bufferSize);
 
-    //int magicScale = 70;
     glColor3f(rand()%255/255.0, rand()%255/255.0,rand()%255/255.0);
-    //glColor4f(rand()%255/255.0, rand()%255/255.0,rand()%255/255.0, max*70);
 
     for( int i = 0; i < g_bufferSize; i++ )
     {
@@ -619,27 +612,24 @@ void gl_time_domain_custom(float xMin, float xMax, float yOffset, bool flip, flo
         x += xinc;
     }
     glEnd();
-    // cout << xCam << " " << yCam << " " << zCam << endl;
 }
 
 void gl_line(float max, int max_pos){
     double magicMaxPos = 5;
-    double xStart = 7.2;  //ide lower frequencies
-    double xEnd = 7;
+    double xStart = 8.9;  //hide lower frequencies
+    double xEnd = 8.4;
 
     for(int i = 0; i < g_all_maxes.size(); i++){
         glBegin(GL_QUADS);
         glColor3f(rand()%255/255.0, rand()%255/255.0,rand()%255/255.0);
-            // (int)(g_all_maxes[i]/10.0
             glVertex3f(g_all_maxes[i]/magicMaxPos - xStart, -.008, 0);
             glVertex3f(g_all_maxes[i]/magicMaxPos - xStart, .008, 0);
             glVertex3f(g_all_maxes[i]/magicMaxPos - xEnd, .008, 0);
             glVertex3f(g_all_maxes[i]/magicMaxPos - xEnd, -.008, 0);
         glEnd();
     }
-    //TODO: decrease resolution of line (make more 1D) by drawing random pixel colors 
-    //on a short line segment for each new frequency
-    if(g_all_maxes.size() >= g_frequency_max){ //TODO: finalize size
+    cout << "line size: " << g_all_maxes.size() << endl;
+    if(g_all_maxes.size() >= 10){ //TODO: finalize size
         if(gl_zoom_in()){
             the_chuck->broadcastExternalEvent("lineEnd");
             g_line = false;
@@ -662,21 +652,13 @@ void gl_square(float max, int max_pos){
     glColor4f(rand()%255/255.0, rand()%255/255.0,rand()%255/255.0, max*magicScale);
 
     for(int i = 0; i < g_all_maxes.size(); i++){
-        // glBegin(GL_LINES);
-        // glColor3f(rand()%255/255.0, rand()%255/255.0,rand()%255/255.0);
-        // //glColor3f(sin(2*MY_PIE*counter), sin(2*MY_PIE*counter +2*MY_PIE/3),sin(2*MY_PIE*counter +4*MY_PIE/3));
-        // counter+=.00001;
-        if(g_all_maxes[i]/20.0 - 3 <= 3 && g_all_maxes[i]/20.0 - 3 >= -3){
-        //     //glColor3f(i%255, i%255, i%255);
-        //     glVertex3f(-3, g_all_maxes[i]/20.0 - 3, 0.0);
-        //     glVertex3f(3, g_all_maxes[i]/20.0 - 3, 0);
-            gl_time_domain_custom(-3, 3, g_all_maxes[i]/20.0 - 3, false, max, true);
-
+        float position = g_all_maxes[i]/20.0 - 3.5; //offset for lower freqs
+        if(position < 3 && position > -3){
+            gl_time_domain_custom(-3, 3, position, false, max, true);
         }
-        // glEnd();
     }
 
-    //outline square!
+    //outline square
     glColor3f(1.0f, 1.0f, 1.0f); // Let it be yellow.
     glBegin(GL_LINE_STRIP);
     glVertex2f(3.01f, 3.01f);
@@ -685,10 +667,9 @@ void gl_square(float max, int max_pos){
     glVertex2f(-3.01f, 3.01f);
     glVertex2f(3.01f, 3.01f);
     glEnd();
+    cout << "square size: " << g_all_maxes.size() << endl;
 
-    if(g_all_maxes.size() >= g_frequency_max){
-        //cool effecf
-        
+    if(g_all_maxes.size() >= 10){        
         if(gl_line_to_plane()){  //done with effect
             the_chuck->broadcastExternalEvent("squareEnd");
             g_square = false;
@@ -703,9 +684,11 @@ void gl_square(float max, int max_pos){
         }
     }
     gl_glitch();
+    g_time_domain = true;
 }
 
 void gl_cube(float max, int max_pos){
+    g_time_domain = false;
 
     float finalSize = 5;
     //draw large outline cube
@@ -716,36 +699,27 @@ void gl_cube(float max, int max_pos){
         glBegin(GL_QUADS);
         glColor3f(rand()%255/255.0, rand()%255/255.0,rand()%255/255.0);
         float baselineY = g_all_maxes[i]/20.0 - finalSize;
-        // //glColor3f(sin(2*MY_PIE*counter), sin(2*MY_PIE*counter +2*MY_PIE/3),sin(2*MY_PIE*counter +4*MY_PIE/3));
         if(baselineY <= finalSize/2 && baselineY >= -finalSize/2){
             gl_cube_fill(finalSize, baselineY);
         }
         glEnd();
     }
     gl_cube_rotate();
-    if(g_all_maxes.size() >= g_frequency_max){ //TODO: finalize size
+    cout << "cube size: " << g_all_maxes.size() << endl;
+
+    if(g_all_maxes.size() >= 10){ 
         cube_world();
         gl_final_zoom_out();
-        the_chuck->broadcastExternalEvent("squareEnd");
     }
-
-
 }
 
-//TODO; implement hypercube?
-//TODO: where incorporate FFT and time domain?
-//TODO: include harsh glitches where you get a glimpse and new dimension
-
-//TODO: remove FFT visualized bu still calculate it based on the global bool
+//TODO: implement hypercube?
 float gl_fft(float max, int max_pos){
     // define a starting point
     GLfloat x = -50;
     GLfloat yOffset = -20;
     glLineWidth( 1.0 );
 
-    // increment
-    //GLfloat xinc = ::fabs(x*2 / g_bufferSize);
-    //scaled to human singing tones
     GLfloat xinc = ::fabs(x*20 / g_bufferSize);
     bool currentFFT = true;
     GLfloat colorFade = 1;
@@ -839,10 +813,5 @@ void displayFunc( )
     glFlush();
     // swap the double buffer
     glutSwapBuffers();
-    //unsigned char pixel[4];
-    // glReadPixels(0, 0, 1, 1, GL_RGB, GL_UNSIGNED_BYTE, pixel);
-    // cout << "R: " << pixel[0] << endl;
-    // cout << "G: " << pixel[1] << endl;
-    // cout << "B: " << pixel[2] << endl;
-    // cout << endl;
+
 }
