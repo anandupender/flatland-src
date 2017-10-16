@@ -629,7 +629,7 @@ void gl_line(float max, int max_pos){
         glEnd();
     }
     cout << "line size: " << g_all_maxes.size() << endl;
-    if(g_all_maxes.size() >= 10){ //TODO: finalize size
+    if(g_all_maxes.size() >= 80){ //TODO: finalize size
         if(gl_zoom_in()){
             the_chuck->broadcastExternalEvent("lineEnd");
             g_line = false;
@@ -669,7 +669,7 @@ void gl_square(float max, int max_pos){
     glEnd();
     cout << "square size: " << g_all_maxes.size() << endl;
 
-    if(g_all_maxes.size() >= 10){        
+    if(g_all_maxes.size() >= 160){        
         if(gl_line_to_plane()){  //done with effect
             the_chuck->broadcastExternalEvent("squareEnd");
             g_square = false;
@@ -707,7 +707,7 @@ void gl_cube(float max, int max_pos){
     gl_cube_rotate();
     cout << "cube size: " << g_all_maxes.size() << endl;
 
-    if(g_all_maxes.size() >= 10){ 
+    if(g_all_maxes.size() >= 160){ 
         cube_world();
         gl_final_zoom_out();
     }
