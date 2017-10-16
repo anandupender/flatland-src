@@ -1,0 +1,12 @@
+//zero pad after windowing, concatenate before windowing
+
+FFT size always needs to be multiple of 2
+
+We zero buffer either to:
+	get more granularity in FFT
+	or roind to next 2 multiple
+
+
+Smaller hop size = take fft more often
+
+take as large of an fft as you can and offset by small amounts (hops)

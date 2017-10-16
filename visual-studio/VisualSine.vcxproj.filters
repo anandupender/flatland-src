@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\core\lo\address.c">
+      <Filter>ChucK Core\lo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\lo\blob.c">
+      <Filter>ChucK Core\lo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\lo\bundle.c">
+      <Filter>ChucK Core\lo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_absyn.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_compile.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_dl.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_emit.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_errmsg.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_frame.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_instr.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_io.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_lang.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_oo.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_otf.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_parse.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_scan.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_shell.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_stats.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_symbol.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_table.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_type.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_ugen.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_utils.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_vm.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\chuck_win32.c">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\hidio_sdl.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\xmalloc.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\uana_extract.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\uana_xform.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\ugen_filter.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\ugen_osc.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\ugen_stk.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\ugen_xxx.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\ulib_machine.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\ulib_math.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\ulib_opsc.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\ulib_regex.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\ulib_std.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_buffers.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_console.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_hid.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_math.c">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_network.c">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_opsc.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_raw.c">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_serial.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_sndfile.c">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_string.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_thread.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\util_xforms.c">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\lo\send.c">
+      <Filter>ChucK Core\lo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\lo\server.c">
+      <Filter>ChucK Core\lo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\lo\timetag.c">
+      <Filter>ChucK Core\lo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\rtmidi.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\midiio_rtmidi.cpp">
+      <Filter>ChucK Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\lo\message.c">
+      <Filter>ChucK Core\lo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\lo\method.c">
+      <Filter>ChucK Core\lo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\lo\pattern_match.c">
+      <Filter>ChucK Core\lo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\regcomp.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\regerror.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\regexec.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\tre-ast.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\tre-compile.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\tre-filter.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\tre-match-approx.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\tre-match-backtrack.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\tre-match-parallel.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\tre-mem.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\tre-parse.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\regex\tre-stack.c">
+      <Filter>ChucK Core\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\host\RtAudio\RtAudio.cpp">
+      <Filter>RtAudio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\host\VisualSine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\core\chuck.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_absyn.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_carrier.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_compile.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_def.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_dl.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_emit.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_errmsg.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_frame.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_instr.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_io.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_lang.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_win32.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_oo.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_otf.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_parse.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_scan.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_shell.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_stats.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_symbol.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_table.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_type.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_ugen.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_utils.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\chuck_vm.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\config.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\lo.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\lo_endian.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\lo_errors.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\lo_internal.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\lo_lowlevel.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\lo_macros.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\lo_osc_types.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\lo_throw.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\lo_types.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\lo\lo_types_internal.h">
+      <Filter>ChucK Core\lo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\hidio_sdl.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\dirent_win32.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\uana_extract.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\uana_xform.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\ugen_filter.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\ugen_osc.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\ugen_stk.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\ugen_xxx.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\ulib_machine.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\ulib_math.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\ulib_opsc.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\ulib_regex.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\ulib_std.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_buffers.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_console.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_hid.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_math.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_network.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_opsc.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_raw.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_serial.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_sndfile.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_string.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_thread.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\util_xforms.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\rtmidi.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\midiio_rtmidi.h">
+      <Filter>ChucK Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\host\RtAudio\RtAudio.h">
+      <Filter>RtAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\host\RtAudio\RtError.h">
+      <Filter>RtAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="GL\glut.h">
+      <Filter>GL</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="RtAudio">
+      <UniqueIdentifier>{ae82f633-2da0-4eea-ac98-ad4536266a9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ChucK Core">
+      <UniqueIdentifier>{f2465173-5256-4498-a968-2b6fc0680d04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ChucK Core\lo">
+      <UniqueIdentifier>{bfe69cb8-7cd2-4791-83ae-d7cf8acc8585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ChucK Core\regex">
+      <UniqueIdentifier>{63914168-3a2a-429b-b20e-80ad17a4e036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GL">
+      <UniqueIdentifier>{e40acc56-bad2-4b6d-a74a-e44c488ac664}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GL\glut.dll">
+      <Filter>GL</Filter>
+    </None>
+    <None Include="GL\glut32.dll">
+      <Filter>GL</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="GL\glut.lib">
+      <Filter>GL</Filter>
+    </Library>
+    <Library Include="GL\glut32.lib">
+      <Filter>GL</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
