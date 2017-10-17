@@ -79,6 +79,8 @@ vector< int > g_all_maxes;
 float g_y_rotation = 0;
 float g_y_rotation_large = 0;
 
+int g_demo_master_skip = 1;
+
 // global variables
 bool g_draw_dB = false;
 ChucK * the_chuck;
@@ -355,6 +357,9 @@ void keyboardFunc( unsigned char key, int x, int y )
             xCam = 0;
             yCam = 0;
             break;
+        case 'm':
+            g_demo_master_skip++;
+            break;
     }
     glutPostRedisplay( );
 }
@@ -421,7 +426,7 @@ bool final_trigger = false;
 void gl_final_zoom_out(){
     glLoadIdentity();
     gluLookAt(xCam, yCam, zCam, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-    zCam += .1;
+    zCam += .5;
     g_fft = true;
     if(zCam >= 100){
         final_trigger = true;
@@ -629,7 +634,7 @@ void gl_line(float max, int max_pos){
         glEnd();
     }
     cout << "line size: " << g_all_maxes.size() << endl;
-    if(g_all_maxes.size() >= 80){ //TODO: finalize size
+    if(g_all_maxes.size() >= 80 ||  g_demo_master_skip == 2){ //TODO: finalize size
         if(gl_zoom_in()){
             the_chuck->broadcastExternalEvent("lineEnd");
             g_line = false;
@@ -669,7 +674,7 @@ void gl_square(float max, int max_pos){
     glEnd();
     cout << "square size: " << g_all_maxes.size() << endl;
 
-    if(g_all_maxes.size() >= 160){        
+    if(g_all_maxes.size() >= 160 ||  g_demo_master_skip == 3){        
         if(gl_line_to_plane()){  //done with effect
             the_chuck->broadcastExternalEvent("squareEnd");
             g_square = false;
@@ -707,7 +712,7 @@ void gl_cube(float max, int max_pos){
     gl_cube_rotate();
     cout << "cube size: " << g_all_maxes.size() << endl;
 
-    if(g_all_maxes.size() >= 160){ 
+    if(g_all_maxes.size() >= 160 ||  g_demo_master_skip == 4){ 
         cube_world();
         gl_final_zoom_out();
     }
